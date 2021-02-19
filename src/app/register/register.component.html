@@ -1,0 +1,66 @@
+
+<h1 style="text-align: center; color: rgb(2, 59, 165);">Register Form</h1>
+
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+      <!-- username -->
+      <label style=" color: rgb(2, 59, 165);" class="form-label" for=""><b>Username:</b></label>
+        <input type="text" name="username" id="" class="form-control" placeholder="username" formControlName="username">
+        <p style="color: red;" *ngIf="registerForm.get('username').hasError('required')&& !registerForm.get('username').untouched">Username  is required**</p><br>
+
+
+        <!-- email -->
+        <label style=" color: rgb(2, 59, 165);" class="form-label" for=""><b>E-mail:</b></label>
+        <input type="email" name="email" id="" class="form-control" placeholder="email" formControlName="email"><br>
+        <p style="color: red;" *ngIf="registerForm.get('email').hasError('required')&& !registerForm.get('email').untouched">E-mail is required**</p><br>
+
+        <!-- password -->
+        <label style=" color: rgb(2, 59, 165);" class="form-label" for=""><b>Password:</b></label>
+        <input type="password" name="password" id="" class="form-control" placeholder="password" formControlName="password">
+        <p style="color: red;" *ngIf="registerForm.get('password').hasError('required')&& !registerForm.get('password').untouched">PASSWORD is required**</p><br>
+        
+        <br>
+
+
+      <!-- city -->
+       
+        <label style=" color: rgb(2, 59, 165);" class="form-label" for=""><b>City:</b></label>
+        <input type="text" name="city" id="" class="form-control" placeholder="city" formControlName="city"><br>
+        <p style="color: red;" *ngIf="registerForm.get('city').hasError('required')&& !registerForm.get('city').untouched">City is required**</p><br>
+
+        <!-- pincode -->
+        <label style=" color: rgb(2, 59, 165);" class="form-label" for=""><b>PINCODE:</b></label>
+        <input type="text" name="pincode" id="" class="form-control" placeholder="PINCODE" formControlName="pincode">
+
+        
+<br>
+        <div class="form-group"> 
+            <h3 style=" color: rgb(2, 59, 165);">Address:</h3>
+            <textarea class="form-control" name="address" id="tx"  rows="5" formControlName="address" value="textarea"></textarea>
+            <p style="color: red;" *ngIf="registerForm.get('address').hasError('required')&& !registerForm.get('address').untouched">Address is required**</p><br>
+            </div>
+
+<br><br>
+
+
+<div class="col-12">
+
+  <input type="file" class="form-control" (change)="incomingFile($event)" name="photo" accept='image/*' placeholder="Upload file">
+  
+  </div>
+
+
+
+
+
+
+
+
+            
+
+
+<button class="btn btn-success" type="submit" >register</button>
+
+    </form>
+</div>
